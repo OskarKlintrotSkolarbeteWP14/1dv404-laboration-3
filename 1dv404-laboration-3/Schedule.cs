@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _1dv404_laboration_3
 {
-    class Schedule
+    public class Schedule
     {
         private List<Contest> _schedulelist = new List<Contest>();
         private string FullContest = null;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _1dv404_laboration_3
 {
-    class Contest
+    public class Contest
     {
         private DateTime _time;
         private List<string> _event = new List<string>();
