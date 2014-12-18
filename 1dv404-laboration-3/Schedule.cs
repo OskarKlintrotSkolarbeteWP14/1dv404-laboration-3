@@ -25,6 +25,14 @@ namespace _1dv404_laboration_3
 
         public void Add(Contest value)
         {
+            try
+            {
+                value.Time.ToString();
+            }
+            catch (Exception)
+            {
+                throw new Exception("Du måste lägga till ett datum innan du kan spara tävlingen!");
+            }
             if (!value.Event.Any())
             {
                 throw new Exception("Du måste lägga till grenar innan du kan spara tävlingen!");
