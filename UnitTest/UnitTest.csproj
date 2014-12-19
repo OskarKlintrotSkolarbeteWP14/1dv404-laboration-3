@@ -36,9 +36,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="1dv404-laboration-3.Fakes">
-      <HintPath>FakesAssemblies\1dv404-laboration-3.Fakes.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
   </ItemGroup>
@@ -67,9 +64,6 @@
       <Project>{1ee7677f-75f3-4c99-9740-eb04c3d86929}</Project>
       <Name>1dv404-laboration-3</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Fakes Include="Fakes\1dv404-laboration-3.fakes" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

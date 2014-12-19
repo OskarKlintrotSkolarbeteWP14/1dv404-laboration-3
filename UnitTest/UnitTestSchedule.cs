@@ -6,41 +6,26 @@ using Microsoft.QualityTools.Testing.Fakes;
 
 namespace UnitTest
 {
-    //public interface IContest
-    //{
-    //    public DateTime Time;
-    //    public List<string> Event = new List<string>();
-    //    public List<string> Referee = new List<string>();
-    //    public string FullContest = null;
-    //}
-
     [TestClass]
     public class UniTestSchedule
     {
-        //private IContest stubContest;
-        //public UnitTestSchedule(IContest obj) {
-        //    stubContest = obj;
-        //}
-        //public class Contest{
-        //    return stubContest;
-        //}
         [TestMethod]
-        public void TestPropertyScheduleList()
+        public void ScheduleListComplete()
         {
             #region Initiate
-
-            Contest StubContest = new Contest();
-
-            //StubContest.Time = DateTime.ParseExact("2015-05-12 11:45", "yyyy-MM-dd HH:mm",
-            //                           System.Globalization.CultureInfo.InvariantCulture);
-
-            StubContest.Time = "2015-05-12 11:45";
             
-            StubContest.Event.Add("Barr");
-            StubContest.Event.Add("Trampets");
+            DateTime Time;
+            List<string> Event = new List<string>();
+            List<string> Referee = new List<string>();
 
-            StubContest.Referee.Add("Anna");
-            StubContest.Referee.Add("Sara");
+            Time = DateTime.ParseExact("2015-05-12 11:45", "yyyy-MM-dd HH:mm",
+                                       System.Globalization.CultureInfo.InvariantCulture);
+            
+            Event.Add("Barr");
+            Event.Add("Trampets");
+
+            Referee.Add("Anna");
+            Referee.Add("Sara");
 
             Schedule testSchedule = new Schedule();
 
@@ -50,7 +35,7 @@ namespace UnitTest
 
             try
             {
-                testSchedule.Add(StubContest);
+                testSchedule.AddContest(Time, Event, Referee);
             }
 
             #endregion
@@ -65,5 +50,83 @@ namespace UnitTest
 
             #endregion
         }
+        [TestMethod]
+        public void ScheduleListWithEmptyEvent()
+        {
+            #region Initiate
+
+            DateTime Time;
+            List<string> Event = new List<string>();
+            List<string> Referee = new List<string>();
+            
+            Time = DateTime.ParseExact("2015-05-12 11:45", "yyyy-MM-dd HH:mm",
+                                       System.Globalization.CultureInfo.InvariantCulture);
+            Referee.Add("Anna");
+            Referee.Add("Sara");
+
+            Schedule testSchedule = new Schedule();
+
+            #endregion
+
+            #region Test
+
+            try
+            {
+                testSchedule.AddContest(Time, Event, Referee);
+            }
+
+            #endregion
+
+            #region Assert
+
+            catch (Exception)
+            {
+                return;
+            }
+
+            Assert.Fail();
+
+            #endregion
+        }
+        [TestMethod]
+        public void ScheduleListWithEmptyReferee()
+        {
+            #region Initiate
+
+            DateTime Time;
+            List<string> Event = new List<string>();
+            List<string> Referee = new List<string>();
+
+            Time = DateTime.ParseExact("2015-05-12 11:45", "yyyy-MM-dd HH:mm",
+                                       System.Globalization.CultureInfo.InvariantCulture);
+            
+            Event.Add("Barr");
+            Event.Add("Trampets");
+
+            Schedule testSchedule = new Schedule();
+
+            #endregion
+
+            #region Test
+
+            try
+            {
+                testSchedule.AddContest(Time, Event, Referee);
+            }
+
+            #endregion
+
+            #region Assert
+
+            catch (Exception)
+            {
+                return;
+            }
+
+            Assert.Fail();
+
+            #endregion
+        }
+
     }
 }

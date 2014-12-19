@@ -10,19 +10,19 @@ namespace UnitTest
     public class IntegrationTest
     {
         [TestMethod]
-        public void TestSaveCompleteContest()
+        public void SaveCompleteContestToSchedule()
         {
             #region Initiate
 
-            Contest StubContest = new Contest();
+            Contest testContest = new Contest();
 
-            StubContest.Time = "2015-05-12 11:45";
+            testContest.setTime("2015-05-12 11:45");
             
-            StubContest.Event.Add("Barr");
-            StubContest.Event.Add("Trampets");
+            testContest.Event.Add("Barr");
+            testContest.Event.Add("Trampets");
 
-            StubContest.Referee.Add("Anna");
-            StubContest.Referee.Add("Sara");
+            testContest.Referee.Add("Anna");
+            testContest.Referee.Add("Sara");
 
             Schedule testSchedule = new Schedule();
 
@@ -32,7 +32,7 @@ namespace UnitTest
 
             try
             {
-                testSchedule.Add(StubContest);
+                testSchedule.AddContest(testContest.Time, testContest.Event, testContest.Referee);
             }
 
             #endregion
@@ -49,17 +49,17 @@ namespace UnitTest
         }
 
         [TestMethod]
-        public void TestSaveContestWithEmptyTime()
+        public void SaveContestWithEmptyTimeToSchedule()
         {
             #region Initiate
 
-            Contest StubContest = new Contest();
+            Contest testContest = new Contest();
 
-            StubContest.Event.Add("Barr");
-            StubContest.Event.Add("Trampets");
+            testContest.Event.Add("Barr");
+            testContest.Event.Add("Trampets");
 
-            StubContest.Referee.Add("Anna");
-            StubContest.Referee.Add("Sara");
+            testContest.Referee.Add("Anna");
+            testContest.Referee.Add("Sara");
 
             Schedule testSchedule = new Schedule();
 
@@ -69,7 +69,7 @@ namespace UnitTest
 
             try
             {
-                testSchedule.Add(StubContest);
+                testSchedule.AddContest(testContest.Time, testContest.Event, testContest.Referee);
             }
             catch (Exception)
             {
@@ -85,16 +85,16 @@ namespace UnitTest
         }
 
         [TestMethod]
-        public void TestSaveContestWithEmptyEvent()
+        public void SaveContestWithEmptyEventToSchedule()
         {
             #region Initiate
 
-            Contest StubContest = new Contest();
+            Contest testContest = new Contest();
 
-            StubContest.Time = "2015-05-12 11:45";
+            testContest.setTime("2015-05-12 11:45");
 
-            StubContest.Referee.Add("Anna");
-            StubContest.Referee.Add("Sara");
+            testContest.Referee.Add("Anna");
+            testContest.Referee.Add("Sara");
 
             Schedule testSchedule = new Schedule();
 
@@ -104,7 +104,7 @@ namespace UnitTest
 
             try
             {
-                testSchedule.Add(StubContest);
+                testSchedule.AddContest(testContest.Time, testContest.Event, testContest.Referee);
             }
             catch (Exception)
             {
@@ -120,16 +120,16 @@ namespace UnitTest
         }
 
         [TestMethod]
-        public void TestSaveContestWithEmptyReferee()
+        public void SaveContestWithEmptyReferee()
         {
             #region Initiate
 
-            Contest StubContest = new Contest();
+            Contest testContest = new Contest();
 
-            StubContest.Time = "2015-05-12 11:45";
+            testContest.setTime("2015-05-12 11:45");
 
-            StubContest.Event.Add("Barr");
-            StubContest.Event.Add("Trampets");
+            testContest.Event.Add("Barr");
+            testContest.Event.Add("Trampets");
 
             Schedule testSchedule = new Schedule();
 
@@ -139,7 +139,7 @@ namespace UnitTest
 
             try
             {
-                testSchedule.Add(StubContest);
+                testSchedule.AddContest(testContest.Time, testContest.Event, testContest.Referee);
             }
             catch (Exception)
             {

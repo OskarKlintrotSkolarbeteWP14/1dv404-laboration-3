@@ -13,21 +13,20 @@ namespace _1dv404_laboration_3
         private List<string> _referee = new List<string>();
         private string FullContest = null;
 
-        public string Time
+        public DateTime Time
         {
             get
             {
-                if (_time.Year == 0001)
+                return _time;
+            }
+
+            set
+            {
+                if (value.Year == 0001)
                 {
                     throw new Exception("Datumet är inte satt!");
                 }
-
-                return _time.ToString("f");
-            }
-            set
-            {
-                _time = DateTime.ParseExact(value, "yyyy-MM-dd HH:mm",
-                                       System.Globalization.CultureInfo.InvariantCulture);
+                _time = value;
             }
         }
 
@@ -38,6 +37,12 @@ namespace _1dv404_laboration_3
         public List<string> Referee
         {
             get { return _referee; }
+        }
+
+        public void setTime(string date)
+        {
+            Time = DateTime.ParseExact(date, "yyyy-MM-dd HH:mm",
+                                       System.Globalization.CultureInfo.InvariantCulture);
         }
 
         public override string ToString()
@@ -54,7 +59,7 @@ namespace _1dv404_laboration_3
                 FullContest = FullContest + Ref + "\n";
             }
 
-            FullContest = FullContest + "\nDatum:\n" + Time + "\n";
+            FullContest = FullContest + "\nDatum:\n" + Time.ToString("f") + "\n";
             return FullContest;
         }
     }
