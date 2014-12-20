@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 
 namespace _1dv404_laboration_3
 {
@@ -16,29 +17,25 @@ namespace _1dv404_laboration_3
             get { return _schedulelist; }
         }
 
-        public void AddContest(DateTime date, List<string> events,List<string> referee)
+        public void AddContest(DateTime date, List<string> events, IList<string> referee)
         {
             string[] newContest = new string[3];
             string eventsString;
             string refereeString;
 
-            if (date.Year == 0001)
-            {
-                throw new Exception("Du måste lägga till ett datum innan du kan spara tävlingen!");
-            }
-            if (!events.Any())
-            {
-                throw new Exception("Du måste lägga till grenar innan du kan spara tävlingen!");
-            }
+            //if (date.Year == 0001)
+            //{
+            //    throw new Exception("Du måste lägga till ett datum innan du kan spara tävlingen!");
+            //}
+            //if (!events.Any())
+            //{
+            //    throw new Exception("Du måste lägga till grenar innan du kan spara tävlingen!");
+            //}
             
-            if (!referee.Any())
-            {
-                throw new Exception("Du måste lägga till domare innan du kan spara tävlingen!");
-            }
-
-            //List<string> newContest = new List<string>();
-
-            //newContest.Add(date.ToString("f"));
+            //if (!referee.Any())
+            //{
+            //    throw new Exception("Du måste lägga till domare innan du kan spara tävlingen!");
+            //}
 
             eventsString = "Grenar:\n";
             foreach (string item in events)

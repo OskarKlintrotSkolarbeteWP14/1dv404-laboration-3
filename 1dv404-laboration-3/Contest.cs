@@ -17,15 +17,15 @@ namespace _1dv404_laboration_3
         {
             get
             {
+                if (_time.Year == 0001)
+                {
+                    throw new Exception("Datumet är inte satt!");
+                }
                 return _time;
             }
 
             set
             {
-                if (value.Year == 0001)
-                {
-                    throw new Exception("Datumet är inte satt!");
-                }
                 _time = value;
             }
         }
@@ -35,6 +35,11 @@ namespace _1dv404_laboration_3
             get { return _event; }
         }
         public List<string> Referee
+        {
+            get { return _referee; }
+        }
+
+        private List<string> AddToReferee
         {
             get { return _referee; }
         }

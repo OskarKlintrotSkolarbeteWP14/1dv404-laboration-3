@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using _1dv404_laboration_3;
-using Microsoft.QualityTools.Testing.Fakes;
+using System.Diagnostics;
 
 namespace UnitTest
 {
@@ -17,6 +17,7 @@ namespace UnitTest
             DateTime Time;
             List<string> Event = new List<string>();
             List<string> Referee = new List<string>();
+            string excpectedTestScheduleToString;
 
             Time = DateTime.ParseExact("2015-05-12 11:45", "yyyy-MM-dd HH:mm",
                                        System.Globalization.CultureInfo.InvariantCulture);
@@ -27,27 +28,22 @@ namespace UnitTest
             Referee.Add("Anna");
             Referee.Add("Sara");
 
+            excpectedTestScheduleToString = "den 12 maj 2015 11:45\nGrenar:\nBarr\nTrampets\n\nDomare:\nAnna\nSara\n\n";
+
             Schedule testSchedule = new Schedule();
 
             #endregion
 
             #region Test
 
-            try
-            {
-                testSchedule.AddContest(Time, Event, Referee);
-            }
+            testSchedule.AddContest(Time, Event, Referee);
 
             #endregion
 
             #region Assert
 
-            catch (Exception)
-            {
-
-                Assert.Fail();
-            }
-
+            Assert.AreEqual(excpectedTestScheduleToString, testSchedule.ToString());
+            
             #endregion
         }
         [TestMethod]
@@ -58,6 +54,7 @@ namespace UnitTest
             DateTime Time;
             List<string> Event = new List<string>();
             List<string> Referee = new List<string>();
+            string excpectedResult = "den 12 maj 2015 11:45\nGrenar:\n\nDomare:\nAnna\nSara\n\n";
             
             Time = DateTime.ParseExact("2015-05-12 11:45", "yyyy-MM-dd HH:mm",
                                        System.Globalization.CultureInfo.InvariantCulture);
@@ -70,21 +67,13 @@ namespace UnitTest
 
             #region Test
 
-            try
-            {
-                testSchedule.AddContest(Time, Event, Referee);
-            }
+            testSchedule.AddContest(Time, Event, Referee);
 
             #endregion
 
             #region Assert
 
-            catch (Exception)
-            {
-                return;
-            }
-
-            Assert.Fail();
+            Assert.AreEqual(excpectedResult, testSchedule.ToString());
 
             #endregion
         }
@@ -96,6 +85,7 @@ namespace UnitTest
             DateTime Time;
             List<string> Event = new List<string>();
             List<string> Referee = new List<string>();
+            string excpectedResult = "den 12 maj 2015 11:45\nGrenar:\nBarr\nTrampets\n\nDomare:\n\n";
 
             Time = DateTime.ParseExact("2015-05-12 11:45", "yyyy-MM-dd HH:mm",
                                        System.Globalization.CultureInfo.InvariantCulture);
@@ -109,24 +99,15 @@ namespace UnitTest
 
             #region Test
 
-            try
-            {
-                testSchedule.AddContest(Time, Event, Referee);
-            }
-
+            testSchedule.AddContest(Time, Event, Referee);
+            
             #endregion
 
             #region Assert
 
-            catch (Exception)
-            {
-                return;
-            }
-
-            Assert.Fail();
+            Assert.AreEqual(excpectedResult, testSchedule.ToString());
 
             #endregion
         }
-
     }
 }
