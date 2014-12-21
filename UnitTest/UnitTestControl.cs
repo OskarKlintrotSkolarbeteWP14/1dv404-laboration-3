@@ -6,7 +6,7 @@ using _1dv404_laboration_3;
 namespace UnitTest
 {
     [TestClass]
-    public class UnitTestControll
+    public class UnitTestControl
     {
         [TestMethod]
         public void TestBeforeAddingToSchedule()
