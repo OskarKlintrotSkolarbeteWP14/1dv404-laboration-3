@@ -9,6 +9,13 @@ namespace _1dv404_laboration_3
 {
     public class Controll
     {
+        #region Methods
+
+        /// <summary>
+        /// Check if the string contains a full name or not
+        /// </summary>
+        /// <param name="testString"></param>
+        /// <returns>If the string contains a full name with a first name and a last name, return true</returns>
         public bool RegExTest(string testString)
         {
             Regex regexLetters = new Regex(@"^([\w]+)[ ]([\w]+)$", RegexOptions.IgnoreCase);
@@ -21,6 +28,14 @@ namespace _1dv404_laboration_3
             }
             return false;
         }
+
+        /// <summary>
+        /// Validates the variables that's being added to the schedule.
+        /// </summary>
+        /// <param name="date">The date and time when the contest is being held</param>
+        /// <param name="events">The events for the contest</param>
+        /// <param name="referee">The referees for the contest</param>
+        /// <returns>Method is true if the DateTime and List's are correct and could be added to a schedule</returns>
         public bool TestBeforeAddingToSchedule(DateTime date, List<string> events, List<string> referee)
         {
             if (date.Year == 0001)
@@ -48,5 +63,7 @@ namespace _1dv404_laboration_3
             }
             return true;
         }
+
+        #endregion
     }
 }
