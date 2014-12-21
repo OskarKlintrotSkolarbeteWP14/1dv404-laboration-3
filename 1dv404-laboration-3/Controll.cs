@@ -53,6 +53,7 @@ namespace _1dv404_laboration_3
             }
             else
             {
+                //Check all referees with RegExTest()
                 foreach (string item in referee)
 	            {
                     if (!RegExTest(item))

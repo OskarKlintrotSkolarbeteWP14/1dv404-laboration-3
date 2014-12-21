@@ -31,12 +31,12 @@ namespace _1dv404_laboration_3
         #region Methods
 
         /// <summary>
-        /// Adding a new contest to the schedule
+        /// Adding a new contest to the schedule as an array containing the info about the contest
         /// </summary>
         /// <param name="date">The date and time when the contest is being held</param>
         /// <param name="events">The events for the contest</param>
         /// <param name="referee">The referees for the contest</param>
-        public void AddContest(DateTime date, List<string> events, IList<string> referee)
+        public void AddContest(DateTime date, List<string> events, List<string> referee)
         {
             string[] newContest = new string[3];
             string eventsString;
@@ -71,6 +71,7 @@ namespace _1dv404_laboration_3
             {
                 for (int i = 0; i < item.Length; i++)
                 {
+                    //Combine all contests to one string
                     FullContest = FullContest + item[i].ToString() + "\n";
                 }    
             }
