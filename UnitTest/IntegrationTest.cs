@@ -16,7 +16,7 @@ namespace UnitTest
 
             Contest testContest = new Contest();
             Schedule testSchedule = new Schedule();
-            Controll testControll = new Controll();
+            Control testControll = new Control();
 
             testContest.setTime("2015-05-12 11:45");
             
@@ -57,7 +57,7 @@ namespace UnitTest
 
             Contest testContest = new Contest();
             Schedule testSchedule = new Schedule();
-            Controll testControll = new Controll();
+            Control testControll = new Control();
 
             testContest.Event.Add("Barr");
             testContest.Event.Add("Trampets");
@@ -97,7 +97,7 @@ namespace UnitTest
 
             Contest testContest = new Contest();
             Schedule testSchedule = new Schedule();
-            Controll testControll = new Controll();
+            Control testControll = new Control();
 
             testContest.setTime("2015-05-12 11:45");
 
@@ -136,7 +136,7 @@ namespace UnitTest
 
             Contest testContest = new Contest();
             Schedule testSchedule = new Schedule();
-            Controll testControll = new Controll();
+            Control testControll = new Control();
 
             testContest.setTime("2015-05-12 11:45");
 
@@ -178,7 +178,7 @@ namespace UnitTest
 
             Contest testContest = new Contest();
             Schedule testSchedule = new Schedule();
-            Controll testControll = new Controll();
+            Control testControll = new Control();
 
             testContest.setTime("2015-05-12 11:45");
 

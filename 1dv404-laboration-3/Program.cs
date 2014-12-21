@@ -13,7 +13,7 @@ namespace _1dv404_laboration_3
             Contest tavling = new Contest();
             Contest tavling2 = new Contest();
             Schedule season = new Schedule();
-            Controll testContest = new Controll();
+            Control testContest = new Control();
 
             tavling.Referee.Add("Anders Bertilsson");
             tavling.Referee.Add("Hugo Andersson");

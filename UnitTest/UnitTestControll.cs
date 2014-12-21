@@ -13,7 +13,7 @@ namespace UnitTest
         {
             #region Initiate
 
-            Controll testControll = new Controll();
+            Control testControll = new Control();
             bool TestSucced;
             DateTime Time;
             List<string> Event = new List<string>();
@@ -47,7 +47,7 @@ namespace UnitTest
         {
             #region Initiate
 
-            Controll testControll = new Controll();
+            Control testControll = new Control();
             bool TestSucced;
             DateTime Time;
             List<string> Event = new List<string>();
@@ -88,7 +88,7 @@ namespace UnitTest
         {
             #region Initiate
 
-            Controll testControll = new Controll();
+            Control testControll = new Control();
             bool TestSucced;
             DateTime Time;
             List<string> Event = new List<string>();
@@ -126,7 +126,7 @@ namespace UnitTest
         {
             #region Initiate
 
-            Controll testControll = new Controll();
+            Control testControll = new Control();
             bool TestSucced;
             DateTime Time;
             List<string> Event = new List<string>();

@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace _1dv404_laboration_3
 {
-    public class Controll
+    public class Control
     {
         #region Methods
 
