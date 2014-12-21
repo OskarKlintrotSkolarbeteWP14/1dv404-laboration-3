@@ -10,21 +10,21 @@ namespace UnitTest
     public class IntegrationTest
     {
         [TestMethod]
-        public void SaveCompleteContestToSchedule()
+        public void SaveCompleteContestToScheduleWithControll()
         {
             #region Initiate
 
             Contest testContest = new Contest();
+            Schedule testSchedule = new Schedule();
+            Controll testControll = new Controll();
 
             testContest.setTime("2015-05-12 11:45");
             
             testContest.Event.Add("Barr");
             testContest.Event.Add("Trampets");
 
-            testContest.Referee.Add("Anna");
-            testContest.Referee.Add("Sara");
-
-            Schedule testSchedule = new Schedule();
+            testContest.Referee.Add("Anna Brämström");
+            testContest.Referee.Add("Carolina Klüft");
 
             #endregion
 
@@ -32,7 +32,10 @@ namespace UnitTest
 
             try
             {
-                testSchedule.AddContest(testContest.Time, testContest.Event, testContest.Referee);
+                if (testControll.TestBeforeAddingToSchedule(testContest.Time, testContest.Event, testContest.Referee))
+                {
+                    testSchedule.AddContest(testContest.Time, testContest.Event, testContest.Referee);
+                }
             }
 
             #endregion
@@ -41,27 +44,26 @@ namespace UnitTest
 
             catch (Exception)
             {
-
-                Assert.Fail();
+                Assert.Fail("Ett undantag kastades.");
             }
-
+            
             #endregion
         }
 
         [TestMethod]
-        public void SaveContestWithEmptyTimeToSchedule()
+        public void SaveContestWithEmptyTimeToScheduleWithControll()
         {
             #region Initiate
 
             Contest testContest = new Contest();
+            Schedule testSchedule = new Schedule();
+            Controll testControll = new Controll();
 
             testContest.Event.Add("Barr");
             testContest.Event.Add("Trampets");
 
-            testContest.Referee.Add("Anna");
-            testContest.Referee.Add("Sara");
-
-            Schedule testSchedule = new Schedule();
+            testContest.Referee.Add("Anna Brämström");
+            testContest.Referee.Add("Carolina Klüft");
 
             #endregion
 
@@ -69,34 +71,38 @@ namespace UnitTest
 
             try
             {
-                testSchedule.AddContest(testContest.Time, testContest.Event, testContest.Referee);
+                if (testControll.TestBeforeAddingToSchedule(testContest.Time, testContest.Event, testContest.Referee))
+                {
+                    testSchedule.AddContest(testContest.Time, testContest.Event, testContest.Referee);
+                }
             }
             catch (Exception)
             {
                 return;
             }
+
             #endregion
 
             #region Assert
 
-            Assert.Fail();
+            Assert.Fail("Ett undantag kastades.");
 
             #endregion
         }
 
         [TestMethod]
-        public void SaveContestWithEmptyEventToSchedule()
+        public void SaveContestWithEmptyEventToScheduleWithControll()
         {
             #region Initiate
 
             Contest testContest = new Contest();
+            Schedule testSchedule = new Schedule();
+            Controll testControll = new Controll();
 
             testContest.setTime("2015-05-12 11:45");
 
-            testContest.Referee.Add("Anna");
-            testContest.Referee.Add("Sara");
-
-            Schedule testSchedule = new Schedule();
+            testContest.Referee.Add("Anna Brämström");
+            testContest.Referee.Add("Carolina Klüft");
 
             #endregion
 
@@ -104,34 +110,41 @@ namespace UnitTest
 
             try
             {
-                testSchedule.AddContest(testContest.Time, testContest.Event, testContest.Referee);
+                if (testControll.TestBeforeAddingToSchedule(testContest.Time, testContest.Event, testContest.Referee))
+                {
+                    testSchedule.AddContest(testContest.Time, testContest.Event, testContest.Referee);
+                }
             }
             catch (Exception)
             {
                 return;
             }
+
             #endregion
 
             #region Assert
 
-            Assert.Fail();
+            Assert.Fail("Ett undantag kastades.");
 
             #endregion
         }
 
         [TestMethod]
-        public void SaveContestWithEmptyReferee()
+        public void SaveContestWithBadRefereeNamesToScheduleWithControll()
         {
             #region Initiate
 
             Contest testContest = new Contest();
+            Schedule testSchedule = new Schedule();
+            Controll testControll = new Controll();
 
             testContest.setTime("2015-05-12 11:45");
 
             testContest.Event.Add("Barr");
             testContest.Event.Add("Trampets");
 
-            Schedule testSchedule = new Schedule();
+            testContest.Referee.Add("Anna L33t");
+            testContest.Referee.Add("N00b Klüft");
 
             #endregion
 
@@ -139,17 +152,60 @@ namespace UnitTest
 
             try
             {
-                testSchedule.AddContest(testContest.Time, testContest.Event, testContest.Referee);
+                if (testControll.TestBeforeAddingToSchedule(testContest.Time, testContest.Event, testContest.Referee))
+                {
+                    testSchedule.AddContest(testContest.Time, testContest.Event, testContest.Referee);
+                }
             }
             catch (Exception)
             {
                 return;
             }
+
             #endregion
 
             #region Assert
 
-            Assert.Fail();
+            Assert.Fail("Ett undantag kastades.");
+
+            #endregion
+        }
+
+        [TestMethod]
+        public void SaveContestWithEmptyRefereeNamesToScheduleWithControll()
+        {
+            #region Initiate
+
+            Contest testContest = new Contest();
+            Schedule testSchedule = new Schedule();
+            Controll testControll = new Controll();
+
+            testContest.setTime("2015-05-12 11:45");
+
+            testContest.Event.Add("Barr");
+            testContest.Event.Add("Trampets");
+
+            #endregion
+
+            #region Test
+
+            try
+            {
+                if (testControll.TestBeforeAddingToSchedule(testContest.Time, testContest.Event, testContest.Referee))
+                {
+                    testSchedule.AddContest(testContest.Time, testContest.Event, testContest.Referee);
+                }
+            }
+            catch (Exception)
+            {
+                return;
+            }
+
+            #endregion
+
+            #region Assert
+
+            Assert.Fail("Ett undantag kastades.");
 
             #endregion
         }

@@ -11,9 +11,11 @@ namespace _1dv404_laboration_3
     {
         public bool RegExTest(string testString)
         {
-            Regex regex = new Regex(@"^([a-zåäö]+)[ ]([a-zåäö]+)$", RegexOptions.IgnoreCase);
-            Match match = regex.Match(testString);
-            if (match.Success)
+            Regex regexLetters = new Regex(@"^([\w]+)[ ]([\w]+)$", RegexOptions.IgnoreCase);
+            Regex regexNumbers = new Regex(@"^([^\d]+)[ ]([^\d]+)$", RegexOptions.IgnoreCase);
+            Match match = regexLetters.Match(testString);
+            Match match2 = regexNumbers.Match(testString);
+            if (match.Success && match2.Success)
             {
                 return true;
             }
