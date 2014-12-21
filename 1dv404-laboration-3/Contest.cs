@@ -39,11 +39,6 @@ namespace _1dv404_laboration_3
             get { return _referee; }
         }
 
-        private List<string> AddToReferee
-        {
-            get { return _referee; }
-        }
-
         public void setTime(string date)
         {
             Time = DateTime.ParseExact(date, "yyyy-MM-dd HH:mm",
