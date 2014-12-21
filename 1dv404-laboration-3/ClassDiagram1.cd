@@ -1,10 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
   <Class Name="_1dv404_laboration_3.Contest">
-    <Position X="0.5" Y="0.5" Width="1.5" />
+    <Position X="0.5" Y="0.5" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgAAAEAAAAAAAAAgAACAAEEAACAAAAAQg=</HashCode>
+      <HashCode>AAAAAAAAAAAgAAAEAAACAAAAAgAAEAAAAAACAAAQAQg=</HashCode>
       <FileName>Contest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_1dv404_laboration_3.Controll">
+    <Position X="2.5" Y="4" Width="6" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Controll.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_1dv404_laboration_3.Program">
+    <Position X="8.25" Y="2.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_1dv404_laboration_3.Schedule">
+    <Position X="3.5" Y="0.5" Width="5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAEBAACBAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Schedule.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
