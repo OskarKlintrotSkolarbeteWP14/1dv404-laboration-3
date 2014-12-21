@@ -23,20 +23,6 @@ namespace _1dv404_laboration_3
             string eventsString;
             string refereeString;
 
-            //if (date.Year == 0001)
-            //{
-            //    throw new Exception("Du måste lägga till ett datum innan du kan spara tävlingen!");
-            //}
-            //if (!events.Any())
-            //{
-            //    throw new Exception("Du måste lägga till grenar innan du kan spara tävlingen!");
-            //}
-            
-            //if (!referee.Any())
-            //{
-            //    throw new Exception("Du måste lägga till domare innan du kan spara tävlingen!");
-            //}
-
             eventsString = "Grenar:\n";
             foreach (string item in events)
             {
